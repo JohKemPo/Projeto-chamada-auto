@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import datetime, io
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='')
 
 @app.route('/')
 def index():
@@ -13,8 +13,9 @@ def submit():
     data = datetime.datetime.now().strftime('%d/%m/%Y')
 
     # Salvar os dados em um arquivo de texto
-    with io.open('log.txt', 'a', encoding='utf-8') as f:
-        f.write(f"Nome: {nome} Data: {data} \n")
+    if(len(nome) != 0):
+        with io.open('log.txt', 'a', encoding='utf-8') as f:
+            f.write(f"Nome: {nome} Data: {data} \n")    
 
     return render_template('submit.html', nome=nome, data=data)
 
