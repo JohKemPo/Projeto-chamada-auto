@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CHAMADA</title>
+  <style>
+    /* Define o estilo para centralizar os elementos */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Define o estilo para o campo de input e botão */
+    input[type="text"], input[type="submit"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form action="/submit" method="POST">
+    <h2 id="data" align="center">CHAMADA </h2>
+    <script>
+		var dataAtual = new Date();
+		var dia = dataAtual.getDate();
+		var mes = dataAtual.getMonth() + 1;
+		var ano = dataAtual.getFullYear();
+		document.getElementById("data").innerHTML = "Chamada dia " + dia + "/" + mes;
+	</script>
+    <input type="text" name="nome" placeholder="Digite o seu nome">
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
