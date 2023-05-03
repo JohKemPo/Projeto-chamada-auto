@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import datetime, io
 
-app = Flask(__name__, template_folder='')
+app = Flask(__name__)
 
 @app.route('/')
 def index():
